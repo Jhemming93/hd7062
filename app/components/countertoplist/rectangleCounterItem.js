@@ -28,22 +28,28 @@ export default function RectangleCounterItem() {
             />
           </div>
           <div>
-            <form className="md:grid md:grid-cols-2 gap-2">
-              <div className="flex items-center">
-                <label className="font-bold">B</label>
-                <input
-                  type="text"
-                  className="form-input h-4 ml-2 rounded"
-                  placeholder={measurment}
-                ></input>
-              </div>
-              <div className="flex items-center">
-                <label className="font-bold">c</label>
-                <input
-                  type="text"
-                  className="form-input h-4 ml-2 rounded max-w-fit"
-                  placeholder={measurment}
-                ></input>
+            <form className="mt-8">
+              <div className="grid grid-cols-2">
+                <div className="flex items-center">
+                  <label className="font-bold px-2 whitespace-nowrap">
+                    B Side
+                  </label>
+                  <input
+                    type="text"
+                    className="form-input h-4 rounded w-full"
+                    placeholder={measurment}
+                  />
+                </div>
+                <div className="flex items-center">
+                  <label className="font-bold px-2 whitespace-nowrap">
+                    C Side
+                  </label>
+                  <input
+                    type="text"
+                    className="form-input h-4 rounded w-full"
+                    placeholder={measurment}
+                  ></input>
+                </div>
               </div>
             </form>
           </div>
