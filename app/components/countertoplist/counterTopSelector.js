@@ -7,8 +7,8 @@ export default function CounterTopSelector({ type }) {
     case "Rectangle":
       return <RectangleCounterItem />;
     case "U-Shape":
-      return <LShapeCounterItem />;
-    case "L-Shape":
       return <UShapeCounterItem />;
+    case "L-Shape":
+      return <LShapeCounterItem />;
   }
 }
