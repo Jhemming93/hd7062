@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/counterTopSelectionMenu";
+import { MyFunctions } from "./MyFunctions";
 
 const counterTopList = [];
 
@@ -10,7 +11,7 @@ const counterTopList = [];
 
 const Home = () => {
   const [list, setList] = useState(counterTopList);
-
+  const [measurment, setMeasurment] = useState("inches");
   const addCounterTopToList = (event) => {
     event.preventDefault();
     const type = event.target.alt;
@@ -24,7 +25,11 @@ const Home = () => {
     setList([newCounterTop, ...list]);
   };
 
-  useEffect(() => {}, []);
+  const removeCounterTop = (event) => {
+    event.preventDefault();
+    let a = event.parentNode.getAttribute("id");
+    console.log(this.event.target.parentNode);
+  };
 
   return (
     <main>
@@ -39,7 +44,9 @@ const Home = () => {
               <h3>Current Counter Tops</h3>
               <span className="w-full bg-black h-px block"></span>
             </div>
-            <CounterTopList counterTopList={list} />
+            <MyFunctions.Provider value={[removeCounterTop, setMeasurment]}>
+              <CounterTopList counterTopList={list} />
+            </MyFunctions.Provider>
           </div>
         </div>
         {/* end of grid */}

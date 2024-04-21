@@ -1,14 +1,19 @@
-import LShapeCounterItem from "./lShapeCounterItem";
-import RectangleCounterItem from "./rectangleCounterItem";
-import UShapeCounterItem from "./uShapeCounterItem";
+// import LShapeCounterItem from "./lshape/lShapeCounterItem";
+// import RectangleCounterItem from "./counterItem";
+// import UShapeCounterItem from "./ushape/uShapeCounterItem";
+import CounterItem from "./counterItem";
 
-export default function CounterTopSelector({ type }) {
+export default function CounterTopSelector({ type, id }) {
+  const rectangleL = ["B", "C"];
+  const uShapeL = ["A", "B", "C", "D", "E"];
+  const lShapeL = ["A", "B", "C", "D"];
+
   switch (type) {
     case "Rectangle":
-      return <RectangleCounterItem />;
+      return <CounterItem letters={rectangleL} type={type} postid={id} />;
     case "U-Shape":
-      return <UShapeCounterItem />;
+      return <CounterItem letters={uShapeL} type={type} postid={id} />;
     case "L-Shape":
-      return <LShapeCounterItem />;
+      return <CounterItem letters={lShapeL} type={type} postid={id} />;
   }
 }
