@@ -54,10 +54,9 @@ export default function TotalSqFeet(props) {
         return sum;
       }
     };
-
+    console.log(measurment);
     const sum = findSum();
 
-    console.log(sum);
     if (measurment === "Inches") {
       let feet = convertToFeet(sum);
       return feet;

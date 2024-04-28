@@ -11,7 +11,7 @@ const counterTopList = [];
 
 const Home = () => {
   const [list, setList] = useState(counterTopList);
-  const [measurment, setMeasurment] = useState("inches");
+  const [measurment, setMeasurment] = useState("Inches");
   const [id, setId] = useState(0);
   const addCounterTopToList = (event) => {
     event.preventDefault();
