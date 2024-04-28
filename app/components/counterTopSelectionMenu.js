@@ -1,12 +1,11 @@
 import { useState } from "react";
 import CounterTopShapeBtn from "./buttons/counterTopShapeBtn";
 import ToggleBtn from "./buttons/toggleBtn";
+import { MyFunctions } from "../MyFunctions";
 
 export default function CounterTopSelectionMenu({ onClick }) {
-  const [mesaurment, setMeasurment] = useState("Inches");
-
   const toggleActive = () => {};
-  console.log(mesaurment);
+  // console.log(mesaurment);
 
   return (
     <div className="bg-slate-200 p-2 my-2 rounded text-lg md:text-xl">
@@ -18,7 +17,13 @@ export default function CounterTopSelectionMenu({ onClick }) {
       </div>
       <div>
         <h3 className="pb-2 mt-3 font-bold text-2xl">Measurment Units</h3>
-        <ToggleBtn left="Inches" right="Feet" setFunction={setMeasurment} />
+        <MyFunctions.Consumer>
+          {(value) => {
+            return (
+              <ToggleBtn left="Inches" right="Feet" setFunction={value[1]} />
+            );
+          }}
+        </MyFunctions.Consumer>
       </div>
     </div>
   );

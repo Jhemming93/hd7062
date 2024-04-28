@@ -1,9 +1,9 @@
 import deleteX from "../../../public/icons/x-cancel.svg";
 import Image from "next/image";
 
-export default function DeleteBtn({ onClick }) {
+export default function DeleteBtn({ onClick, postid }) {
   return (
-    <button className="max-w-8" onClick={onClick}>
+    <button className="max-w-8" onClick={() => onClick(postid)}>
       <Image
         src={deleteX}
         alt="cancel x"
