@@ -3,11 +3,13 @@ import SideInput from "./parts/sideInput";
 import LetteredImage from "./parts/letteredImage";
 import { MyFunctions } from "@/app/MyFunctions";
 import TotalSqFeet from "./parts/totalSqFeet";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function CounterItem({ type, letters, postid }) {
   const [newList, setNewList] = useState(letters);
-  // console.log(letters);
+  const [currentMearsurment, setCurrentMeasurement] = useState("Inches");
+  const myFunctions = useContext(MyFunctions);
+  const measurment = myFunctions[2];
 
   const handleValueChange = (i, num) => {
     const objectIndex = newList.findIndex((obj) => obj.name === i);
@@ -16,7 +18,7 @@ export default function CounterItem({ type, letters, postid }) {
       if (index === objectIndex) {
         // console.log("changed");
         return {
-          name: item.name,
+          ...item,
           value: Number(num),
         };
       } else {
@@ -27,6 +29,36 @@ export default function CounterItem({ type, letters, postid }) {
     setNewList(updatedList);
   };
 
+  const valueConversion = () => {
+    const convert = newList.map((item) => {
+      let value = item.value;
+      let convertNumber = 0;
+      if (currentMearsurment === "Inches") {
+        convertNumber = value / 12;
+      } else {
+        convertNumber = value * 12;
+      }
+
+      let trimNumber = (Math.round(convertNumber * 100) / 100).toFixed(2);
+
+      return {
+        ...item,
+        value: Number(trimNumber),
+      };
+    });
+    console.log(measurment);
+    console.log(currentMearsurment);
+    if (currentMearsurment != measurment) {
+      setCurrentMeasurement(measurment);
+      setNewList(convert);
+    } else {
+      return;
+    }
+  };
+  useEffect(() => {
+    valueConversion();
+  }, [measurment]);
+  console.log(newList);
   return (
     <>
       <MyFunctions.Consumer>
@@ -53,13 +85,11 @@ export default function CounterItem({ type, letters, postid }) {
                       <div className="grid grid-cols-1 sm:grid-cols-2">
                         {newList.map((item, index) => (
                           <SideInput
-                            measurment={value[2]}
                             side={item.name}
                             key={index}
                             postid={postid}
                             value={item.value}
                             handleValueChange={handleValueChange}
-                            stand={item.stand}
                           />
                         ))}
                       </div>

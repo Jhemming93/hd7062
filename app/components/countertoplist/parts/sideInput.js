@@ -14,6 +14,9 @@ export default function SideInput({ side, postid, handleValueChange, value }) {
       handleValueChange(side, myValue);
     }
   }, [myValue]);
+  useEffect(() => {
+    setMyValue(value);
+  }, [value]);
 
   return (
     <div className="flex items-center">

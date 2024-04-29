@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export default function TotalSqFeet(props) {
   const sideList = props.theInches;
   const [feet, setFeet] = useState("0");
+  const [cost, setCost] = useState("0.00");
   const measurment = props.measurment;
 
   let A = "";
@@ -54,14 +55,18 @@ export default function TotalSqFeet(props) {
         return sum;
       }
     };
-    console.log(measurment);
+
     const sum = findSum();
 
     if (measurment === "Inches") {
       let feet = convertToFeet(sum);
       return feet;
     } else {
-      return Math.ceil(sum);
+      if (Math.ceil(sum) < 0) {
+        return 0;
+      } else {
+        return Math.ceil(sum);
+      }
     }
   };
 
@@ -79,10 +84,14 @@ export default function TotalSqFeet(props) {
   }, [sideList]);
 
   return (
-    <div>
+    <div className="flex">
       <p>
         <span className="border-1 bg-white p-1">{feet}</span>{" "}
         <span className="font-bold">Sq. Feet Total</span>
+      </p>
+      <p className="pl-2">
+        <span className="border-1 bg-white p-1">${cost}</span>{" "}
+        <span className="font-bold">Estimate Cost for Counter Top</span>
       </p>
     </div>
   );

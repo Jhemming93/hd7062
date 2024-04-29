@@ -12,6 +12,7 @@ const counterTopList = [];
 const Home = () => {
   const [list, setList] = useState(counterTopList);
   const [measurment, setMeasurment] = useState("Inches");
+  const [cost, setCost] = useState(0);
   const [id, setId] = useState(0);
   const addCounterTopToList = (event) => {
     event.preventDefault();
@@ -51,7 +52,7 @@ const Home = () => {
   return (
     <main>
       <MyFunctions.Provider
-        value={[removeCounterTop, setMeasurment, measurment]}
+        value={[removeCounterTop, setMeasurment, measurment, cost]}
       >
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
           <h2 className="py-8 text-4xl font-bold">Counter Top Calculator</h2>
