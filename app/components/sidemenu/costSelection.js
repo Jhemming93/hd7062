@@ -12,11 +12,14 @@ export default function CostSelection({ setCost }) {
         <Title title="Cost" />
         <div className="flex">
           <p className="pr-2">$</p>{" "}
-          <input
-            className="form-input h-8 rounded w-2/4"
-            value={cost}
-            onChange={() => setCost(event.target.value)}
-          />
+          <form>
+            <input
+              className="form-input h-8 rounded w-2/4"
+              value={cost}
+              name="costInput"
+              onChange={() => setCost(event.target.value)}
+            />
+          </form>
         </div>
       </div>
     </>
