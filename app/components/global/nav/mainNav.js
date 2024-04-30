@@ -14,7 +14,7 @@ export default function MainNav() {
 
   return (
     <>
-      <nav className="self-center">
+      <nav className="sm:self-center ">
         <ul className="flex">
           {navLinks.map((item, index) => (
             <li key={index}>

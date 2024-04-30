@@ -7,7 +7,7 @@ export default function MenuLink(props) {
 
   return (
     <Link
-      className={"font-bold mx-2 text-xl text-black " + textColor}
+      className={"font-bold mx-2 sm:text-xl text-black " + textColor}
       href={link}
     >
       {title}
