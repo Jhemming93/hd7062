@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState, createContext } from "react";
+import { useState } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
-import CounterTopSelectionMenu from "./components/counterTopSelectionMenu";
-import { MyFunctions } from "./MyFunctions";
+import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
+import { MyFunctions } from "./MyContext";
 
 const counterTopList = [];
 
@@ -48,12 +48,13 @@ const Home = () => {
     list.splice(findIndex, 1);
     setList([...list]);
   };
+  const myFunctionValues = [removeCounterTop, setMeasurment, measurment, cost];
 
+  const trySomething = (array) => {};
+  console.log(myFunctionValues);
   return (
     <main>
-      <MyFunctions.Provider
-        value={[removeCounterTop, setMeasurment, measurment, cost]}
-      >
+      <MyFunctions.Provider value={myFunctionValues}>
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
           <h2 className="py-8 text-4xl font-bold">Counter Top Calculator</h2>
           <div className=" md:grid-cols-12 md:grid md:gap-4 ">

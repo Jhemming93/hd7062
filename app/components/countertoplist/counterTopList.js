@@ -1,4 +1,3 @@
-import CounterItem from "./counterItem";
 import CounterTopSelector from "./counterTopSelector";
 
 export default function CounterTopList(props) {
