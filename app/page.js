@@ -4,6 +4,7 @@ import { useState } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
 import { MyFunctions } from "./MyContext";
+import Image from "next/image";
 
 const counterTopList = [];
 
@@ -60,7 +61,19 @@ const Home = () => {
     <main>
       <MyFunctions.Provider value={myFunctionValues}>
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
-          <h2 className="py-8 text-4xl font-bold">Counter Top Estimator</h2>
+          <div className="flex">
+            <h2 className="py-8 text-4xl font-bold">Counter Top Estimator</h2>
+            <div className="pl-2 self-center ">
+              <Image
+                src={"/icons/measuringTape.png"}
+                alt={"Measuring Tape"}
+                width={50}
+                height={50}
+                className=" p-1 bg-white"
+              />
+            </div>
+          </div>
+
           <div className=" md:grid-cols-12 md:grid md:gap-4 ">
             <div className="md:col-span-3 ">
               <CounterTopSelectionMenu onClick={addCounterTopToList} />
