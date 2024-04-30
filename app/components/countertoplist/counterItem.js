@@ -47,8 +47,6 @@ export default function CounterItem({ type, letters, postid }) {
         value: Number(trimNumber),
       };
     });
-    console.log(measurment);
-    console.log(currentMearsurment);
     if (currentMearsurment != measurment) {
       setCurrentMeasurement(measurment);
       setNewList(convert);
