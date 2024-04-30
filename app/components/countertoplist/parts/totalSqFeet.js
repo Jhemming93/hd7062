@@ -12,7 +12,11 @@ export default function TotalSqFeet(props) {
 
   const caculateCost = (feet, cost) => {
     const total = Math.ceil(feet * cost);
-    setCost(total);
+    if (isNaN(total)) {
+      setCost(0);
+    } else {
+      setCost(total);
+    }
   };
 
   let A = "";
