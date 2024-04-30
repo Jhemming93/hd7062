@@ -7,8 +7,9 @@ import Footer from "./components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "HD Tools Test",
-  description: "Tools for me to use at work",
+  title: "Just Tools",
+  description:
+    "A collection of tools used to help calulate costs or estimates for home projects.",
 };
 
 export default function RootLayout({ children }) {

@@ -7,8 +7,8 @@ export default function CounterTopShapeBtn({ title, onClick }) {
   return (
     <>
       <div className="max-w-fit">
-        <div className="bg-slate-50 rounded p-2 ">
-          <button onClick={onClick}>
+        <button onClick={onClick}>
+          <div className="bg-slate-50 rounded p-2 ">
             <div style={{ maxWidth: 94 }}>
               <Image
                 width={250}
@@ -18,8 +18,8 @@ export default function CounterTopShapeBtn({ title, onClick }) {
                 className="w-full h-full"
               />
             </div>
-          </button>
-        </div>
+          </div>
+        </button>
         <p className="text-center pt-1">{title}</p>
       </div>
     </>

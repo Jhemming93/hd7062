@@ -7,13 +7,13 @@ export default function Header() {
         <div className="flex sm:container mx-auto" style={{ maxWidth: 1024 }}>
           <div className="flex p-2">
             <Image
-              src={"/img/THD.png"}
-              alt={"hd logo"}
+              src={"/img/toolsLogo.png"}
+              alt={"justtools logo"}
               width={50}
               height={50}
               className=" p-1 bg-white"
             />
-            <h1 className="pl-1 self-center text-2xl font-bold">My Tools HD</h1>
+            <h1 className="pl-1 self-center text-2xl font-bold">JustTools</h1>
           </div>
         </div>
       </header>

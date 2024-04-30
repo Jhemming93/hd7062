@@ -60,7 +60,7 @@ const Home = () => {
     <main>
       <MyFunctions.Provider value={myFunctionValues}>
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
-          <h2 className="py-8 text-4xl font-bold">Counter Top Calculator</h2>
+          <h2 className="py-8 text-4xl font-bold">Counter Top Estimator</h2>
           <div className=" md:grid-cols-12 md:grid md:gap-4 ">
             <div className="md:col-span-3 ">
               <CounterTopSelectionMenu onClick={addCounterTopToList} />
