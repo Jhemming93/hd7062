@@ -48,10 +48,14 @@ const Home = () => {
     list.splice(findIndex, 1);
     setList([...list]);
   };
-  const myFunctionValues = [removeCounterTop, setMeasurment, measurment, cost];
+  const myFunctionValues = [
+    removeCounterTop,
+    setMeasurment,
+    measurment,
+    setCost,
+    cost,
+  ];
 
-  const trySomething = (array) => {};
-  console.log(myFunctionValues);
   return (
     <main>
       <MyFunctions.Provider value={myFunctionValues}>

@@ -1,6 +1,7 @@
 import { MyFunctions } from "@/app/MyContext";
 import ToggleBtn from "../buttons/toggleBtn";
 import { useContext } from "react";
+import Title from "./parts/title";
 
 export default function MeasurementToggle() {
   const functions = useContext(MyFunctions);
@@ -8,8 +9,8 @@ export default function MeasurementToggle() {
   const setMeasurment = functions[1];
 
   return (
-    <div>
-      <h3 className="pb-2 mt-3 font-bold text-2xl">Measurment Units</h3>
+    <div className=" mt-3">
+      <Title title="Measurement Units" />
       <ToggleBtn left="Inches" right="Feet" setFunction={setMeasurment} />
     </div>
   );

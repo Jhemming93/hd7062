@@ -1,8 +1,9 @@
 import CounterTopShapeBtn from "../buttons/counterTopShapeBtn";
+import Title from "./parts/title";
 export default function ShapesSelection({ onClick }) {
   return (
     <div>
-      <h3 className="pb-2 font-bold text-2xl">Add Counter Top Shape</h3>
+      <Title title="Add Counter Top Shape" />
       <div className="flex flex-wrap gap-2">
         <CounterTopShapeBtn title="L-Shape" onClick={onClick} />
         <CounterTopShapeBtn title="Rectangle" onClick={onClick} />

@@ -1,10 +1,19 @@
-import { useEffect, useState } from "react";
+import { MyFunctions } from "@/app/MyContext";
+import { useContext, useEffect, useState } from "react";
 
 export default function TotalSqFeet(props) {
   const sideList = props.theInches;
   const [feet, setFeet] = useState("0");
   const [cost, setCost] = useState("0.00");
   const measurment = props.measurment;
+  const functions = useContext(MyFunctions);
+
+  const costSet = functions[4];
+
+  const caculateCost = (feet, cost) => {
+    const total = Math.ceil(feet * cost);
+    setCost(total);
+  };
 
   let A = "";
   let B = "";
@@ -82,6 +91,9 @@ export default function TotalSqFeet(props) {
   useEffect(() => {
     setFeet(calcShape());
   }, [sideList]);
+  useEffect(() => {
+    caculateCost(feet, costSet);
+  }, [costSet, sideList]);
 
   return (
     <div className="flex">
