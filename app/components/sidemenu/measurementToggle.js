@@ -9,9 +9,11 @@ export default function MeasurementToggle() {
   const setMeasurment = functions[1];
 
   return (
-    <div className=" mt-3">
+    <div className=" mt-3 ">
       <Title title="Measurement Units" />
-      <ToggleBtn left="Inches" right="Feet" setFunction={setMeasurment} />
+      <div className="">
+        <ToggleBtn left="Inches" right="Feet" setFunction={setMeasurment} />
+      </div>
     </div>
   );
 }

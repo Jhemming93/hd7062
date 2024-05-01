@@ -8,7 +8,7 @@ export default function TotalCost() {
   const currentcost = totalCost[1];
   return (
     <div className="pt-2">
-      <Title title="Total Cost" />
+      <Title title="Total Estimate Cost" />
       <p>${currentcost}</p>
     </div>
   );

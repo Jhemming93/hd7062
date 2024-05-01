@@ -9,7 +9,7 @@ export default function CounterTopShapeBtn({ title, onClick }) {
       <div className="max-w-fit">
         <button onClick={onClick}>
           <div className="bg-slate-50 rounded p-2 ">
-            <div style={{ maxWidth: 94 }}>
+            <div className="max-w-24 md:w-full lg:max-w-20">
               <Image
                 width={250}
                 height={250}
