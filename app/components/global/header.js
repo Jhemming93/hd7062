@@ -15,7 +15,7 @@ export default function Header() {
               alt={"justtools logo"}
               width={50}
               height={50}
-              className="mx-auto sm:mx-0 p-1 bg-white"
+              className="mx-auto sm:mx-0 p-1"
             />
             <h1 className="pl-1 self-center text-3xl font-bold font-stencil tracking-wider text-blue-900 text-center">
               Just Tools
