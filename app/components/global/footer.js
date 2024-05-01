@@ -1,6 +1,6 @@
 export default function Footer() {
   const disclaimer =
-    "*Please note that the estimates provided are based on available information and assumptions at the time of calculation. Actual figures may vary due to unforeseen circumstances, changes in market conditions, or other factors beyond our control. We recommend using these estimates as a general guideline and consulting with a qualified professional for accurate and tailored advice.";
+    "*The estimates provided by this tool are intended for informational purposes only and should not be considered as guarantees. While we strive to provide accurate and up-to-date estimates, they may not reflect the final costs or outcomes.";
   const checkPage = () => {};
   return (
     <footer className="bg-gray-100">

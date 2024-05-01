@@ -96,6 +96,7 @@ const Home = () => {
           <div className="flex">
             <h2 className="py-8 md:text-4xl font-bold text-3xl">
               Counter Top Estimator
+              <span className="text-2xl text-blue-900">*</span>
             </h2>
             <div className="pl-2 self-center md:w-14">
               <Image
