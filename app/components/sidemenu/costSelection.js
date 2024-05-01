@@ -8,7 +8,7 @@ export default function CostSelection({ setCost }) {
 
   return (
     <>
-      <div>
+      <div className="pt-2">
         <Title title="Cost per Sqr. Ft." />
         <div className="flex">
           <p className="pr-2">$</p>{" "}

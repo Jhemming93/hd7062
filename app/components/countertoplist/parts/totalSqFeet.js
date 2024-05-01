@@ -1,4 +1,4 @@
-import { MyFunctions } from "@/app/MyContext";
+import { MyFunctions, MyTotalCost } from "@/app/MyContext";
 import { useContext, useEffect, useState } from "react";
 
 export default function TotalSqFeet(props) {
@@ -7,6 +7,9 @@ export default function TotalSqFeet(props) {
   const [cost, setCost] = useState("0.00");
   const measurment = props.measurment;
   const functions = useContext(MyFunctions);
+  const myTotalCost = useContext(MyTotalCost);
+  const adjustCost = myTotalCost[0];
+  const postid = props.postid;
 
   const costSet = functions[4];
 
@@ -98,6 +101,10 @@ export default function TotalSqFeet(props) {
   useEffect(() => {
     caculateCost(feet, costSet);
   }, [costSet, sideList]);
+
+  useEffect(() => {
+    adjustCost(postid, "cost", cost);
+  }, [cost]);
 
   return (
     <div className="flex">

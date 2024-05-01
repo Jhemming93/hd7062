@@ -11,7 +11,7 @@ export default function SideInput({ side, postid, handleValueChange, value }) {
       setError("bg-red-200 p-1 mt-1");
     } else {
       setError("hidden");
-      handleValueChange(side, myValue);
+      handleValueChange(side, myValue, "value");
     }
   }, [myValue]);
   useEffect(() => {

@@ -5,6 +5,7 @@
 @layer base {
   @font-face {
     font-family: "Stencil";
+    font-style: normal;
     src: url(/fonts/StencilExport.ttf) format("ttf");
   }
 }

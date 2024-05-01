@@ -3,6 +3,7 @@ import MeasurementToggle from "./measurementToggle";
 import CostSelection from "./costSelection";
 import { MyFunctions } from "@/app/MyContext";
 import { useContext } from "react";
+import TotalCost from "./totalCost";
 
 export default function CounterTopSelectionMenu({ onClick }) {
   const functions = useContext(MyFunctions);
@@ -13,6 +14,7 @@ export default function CounterTopSelectionMenu({ onClick }) {
       <ShapesSelection onClick={onClick} />
       <MeasurementToggle />
       <CostSelection setCost={setCost} />
+      <TotalCost />
     </div>
   );
 }

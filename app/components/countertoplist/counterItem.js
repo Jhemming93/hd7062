@@ -12,7 +12,7 @@ export default function CounterItem({ type, letters, postid }) {
   const measurment = functions[2];
   const deleteItem = functions[0];
 
-  const handleValueChange = (i, num) => {
+  const handleValueChange = (i, num, myvalue) => {
     const objectIndex = newList.findIndex((obj) => obj.name === i);
 
     const updatedList = newList.map((item, index) => {
@@ -20,7 +20,7 @@ export default function CounterItem({ type, letters, postid }) {
         // console.log("changed");
         return {
           ...item,
-          value: Number(num),
+          [myvalue]: Number(num),
         };
       } else {
         // console.log("unchanged");
@@ -91,6 +91,7 @@ export default function CounterItem({ type, letters, postid }) {
               theInches={newList}
               type={type}
               measurment={measurment}
+              postid={postid}
             />
           </div>
         </div>

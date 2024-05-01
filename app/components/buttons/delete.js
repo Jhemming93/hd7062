@@ -1,7 +1,7 @@
-import deleteX from "../../../public/icons/x-cancel.svg";
 import Image from "next/image";
 
 export default function DeleteBtn({ onClick, postid }) {
+  const deleteX = "/icons/x-cancel.svg";
   return (
     <button className="max-w-8" onClick={() => onClick(postid)}>
       <Image

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
-import { MyFunctions } from "./MyContext";
+import { MyFunctions, MyTotalCost } from "./MyContext";
 import Image from "next/image";
 
 const counterTopList = [];
@@ -11,13 +11,14 @@ const counterTopList = [];
 // const context = useContext(counterTopList);
 
 const Home = () => {
+  const [currentTotalCost, setCurrentTotalCost] = useState(0);
   const [list, setList] = useState(counterTopList);
   const [measurment, setMeasurment] = useState("Inches");
   const [cost, setCost] = useState(0);
   const [id, setId] = useState(0);
+
   const addCounterTopToList = (event) => {
     event.preventDefault();
-
     const type = event.target.alt;
     postNewCountertop({ type });
   };
@@ -34,14 +35,32 @@ const Home = () => {
     }
   };
 
+  const changeListItemCost = (id, myvalue, num) => {
+    const objectIndex = list.findIndex((item) => item.id === id);
+
+    const updatedList = list.map((item, index) => {
+      if (index === objectIndex) {
+        return {
+          ...item,
+          [myvalue]: Number(num),
+        };
+      } else {
+        return item;
+      }
+    });
+
+    setList(updatedList);
+  };
+
   const postNewCountertop = ({ type }) => {
     let postid = createPostId();
 
     let newCounterTop = new Object({
       type: type,
       id: postid,
+      cost: 0,
     });
-    setList([...list, newCounterTop]);
+    setList([newCounterTop, ...list]);
   };
 
   const removeCounterTop = (id) => {
@@ -49,6 +68,19 @@ const Home = () => {
     list.splice(findIndex, 1);
     setList([...list]);
   };
+
+  const totalTotals = () => {
+    let setTotal = 0;
+    const getTotals = list.forEach((item) => {
+      setTotal = item.cost + setTotal;
+    });
+    setCurrentTotalCost(Number(setTotal));
+  };
+
+  useEffect(() => {
+    totalTotals();
+  }, [list]);
+
   const myFunctionValues = [
     removeCounterTop,
     setMeasurment,
@@ -73,19 +105,20 @@ const Home = () => {
               />
             </div>
           </div>
-
-          <div className=" md:grid-cols-12 md:grid md:gap-4 ">
-            <div className="md:col-span-3 ">
-              <CounterTopSelectionMenu onClick={addCounterTopToList} />
-            </div>
-            <div className="md:col-span-9 container">
-              <div className="p-2 my-2 rounded text-lg md:text-xl">
-                <h3>Current Counter Tops</h3>
-                <span className="w-full bg-black h-px block"></span>
+          <MyTotalCost.Provider value={[changeListItemCost, currentTotalCost]}>
+            <div className=" md:grid-cols-12 md:grid md:gap-4 ">
+              <div className="md:col-span-3 ">
+                <CounterTopSelectionMenu onClick={addCounterTopToList} />
               </div>
-              <CounterTopList counterTopList={list} />
+              <div className="md:col-span-9 container">
+                <div className="p-2 my-2 rounded text-lg md:text-xl">
+                  <h3>Current Counter Tops</h3>
+                  <span className="w-full bg-black h-px block"></span>
+                </div>
+                <CounterTopList counterTopList={list} />
+              </div>
             </div>
-          </div>
+          </MyTotalCost.Provider>
           {/* end of grid */}
         </div>
       </MyFunctions.Provider>
