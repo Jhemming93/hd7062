@@ -107,12 +107,12 @@ export default function TotalSqFeet(props) {
   }, [cost]);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col sm:flex-row">
       <p>
         <span className="border-1 bg-white p-1">{feet}</span>{" "}
         <span className="font-bold">Sq. Feet Total</span>
       </p>
-      <p className="pl-2">
+      <p className="sm:pl-2 py-3 sm:py-0">
         <span className="border-1 bg-white p-1">${cost}</span>{" "}
         <span className="font-bold">Estimate Cost for Counter Top</span>
       </p>

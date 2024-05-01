@@ -26,7 +26,7 @@ export default function SideInput({ side, postid, handleValueChange, value }) {
         <input
           type="text"
           pattern="[0-9]"
-          className="form-input h-4 rounded w-full"
+          className="form-input h-8 rounded w-full"
           id={sideId}
           value={myValue}
           onChange={(event) => setMyValue(event.target.value)}
