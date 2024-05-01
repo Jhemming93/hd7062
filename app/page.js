@@ -94,14 +94,16 @@ const Home = () => {
       <MyFunctions.Provider value={myFunctionValues}>
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
           <div className="flex">
-            <h2 className="py-8 text-4xl font-bold">Counter Top Estimator</h2>
-            <div className="pl-2 self-center ">
+            <h2 className="py-8 md:text-4xl font-bold text-3xl">
+              Counter Top Estimator
+            </h2>
+            <div className="pl-2 self-center md:w-14">
               <Image
                 src={"/icons/measuringTape.png"}
                 alt={"Measuring Tape"}
                 width={50}
                 height={50}
-                className=" p-1 bg-white"
+                className=" p-1 bg-white w-full"
               />
             </div>
           </div>
