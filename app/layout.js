@@ -10,6 +10,8 @@ export const metadata = {
   title: "Just Tools",
   description:
     "A collection of tools used to help calulate costs or estimates for home projects.",
+  keywords: ["CounterTop Calculator"],
+  creator: "Justice Hemming",
 };
 
 export default function RootLayout({ children }) {
