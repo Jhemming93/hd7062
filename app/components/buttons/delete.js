@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function DeleteBtn({ onClick, postid }) {
   const deleteX = "/icons/x-cancel.svg";
   return (
-    <button className="max-w-8" onClick={() => onClick(postid)}>
+    <button className="max-w-8 h-0" onClick={() => onClick(postid)}>
       <Image
         src={deleteX}
         alt="cancel x"
