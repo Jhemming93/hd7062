@@ -2,9 +2,9 @@ import { MyFunctions } from "@/app/MyContext";
 
 import { useContext } from "react";
 import Title from "./parts/title";
-export default function CostSelection({ setCost }) {
+export default function CostSelection() {
   const functions = useContext(MyFunctions);
-  const cost = functions[4];
+  const [cost, setCost] = functions.cost;
 
   return (
     <>

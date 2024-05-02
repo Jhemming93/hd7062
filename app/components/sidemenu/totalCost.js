@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import Title from "./parts/title";
-import { MyTotalCost } from "@/app/MyContext";
+import { MyFunctions, MyTotalCost } from "@/app/MyContext";
 
 export default function TotalCost() {
-  const totalCost = useContext(MyTotalCost);
+  const functions = useContext(MyFunctions);
 
-  const currentcost = totalCost[1];
+  const [currentTotalCost, setCurrentTotalCost] = functions.currentTotalCost;
   return (
     <div className="pt-2">
       <Title title="Total Estimate Cost" />
-      <p>${currentcost}</p>
+      <p>${currentTotalCost}</p>
     </div>
   );
 }

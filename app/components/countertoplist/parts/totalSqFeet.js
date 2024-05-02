@@ -1,25 +1,25 @@
-import { MyFunctions, MyTotalCost } from "@/app/MyContext";
+import { MyFunctions } from "@/app/MyContext";
 import { useContext, useEffect, useState } from "react";
 
 export default function TotalSqFeet(props) {
   const sideList = props.theInches;
   const [feet, setFeet] = useState("0");
-  const [cost, setCost] = useState("0.00");
+  const [currentCost, setCurrentCost] = useState("0.00");
 
   const functions = useContext(MyFunctions);
-  const myTotalCost = useContext(MyTotalCost);
-  const adjustCost = myTotalCost[0];
+
+  const adjustCost = functions.changeListItemCost;
   const postid = props.postid;
   const [measurment, setMeasurment] = functions.measurment;
 
-  const costSet = functions[4];
+  const [cost, setCost] = functions.cost;
 
   const caculateCost = (feet, cost) => {
     const total = Math.ceil(feet * cost);
     if (isNaN(total)) {
-      setCost(0);
+      setCurrentCost(0);
     } else {
-      setCost(total);
+      setCurrentCost(total);
     }
   };
 
@@ -100,12 +100,12 @@ export default function TotalSqFeet(props) {
     setFeet(calcShape());
   }, [sideList]);
   useEffect(() => {
-    caculateCost(feet, costSet);
-  }, [costSet, sideList]);
+    caculateCost(feet, cost);
+  }, [cost, sideList]);
 
   useEffect(() => {
-    adjustCost(postid, "cost", cost);
-  }, [cost]);
+    adjustCost(postid, "cost", currentCost);
+  }, [currentCost]);
 
   return (
     <div className="flex flex-col sm:flex-row">
@@ -114,7 +114,7 @@ export default function TotalSqFeet(props) {
         <span className="font-bold">Sq. Feet Total</span>
       </p>
       <p className="sm:pl-2 py-3 sm:py-0">
-        <span className="border-1 bg-white p-1">${cost}</span>{" "}
+        <span className="border-1 bg-white p-1">${currentCost}</span>{" "}
         <span className="font-bold">Estimate Cost for Counter Top</span>
       </p>
     </div>

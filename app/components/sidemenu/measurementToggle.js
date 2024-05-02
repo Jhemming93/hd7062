@@ -6,7 +6,7 @@ import Title from "./parts/title";
 export default function MeasurementToggle() {
   const functions = useContext(MyFunctions);
 
-  const setMeasurment = functions[1];
+  const [measurment, setMeasurment] = functions.measurment;
 
   return (
     <div className=" mt-3 ">

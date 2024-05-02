@@ -7,8 +7,8 @@ export default function MainNav() {
       link: "/",
     },
     {
-      name: "My Watering",
-      link: "/mywatering",
+      name: "Flooring Estimate",
+      link: "/flooringest",
     },
   ];
 

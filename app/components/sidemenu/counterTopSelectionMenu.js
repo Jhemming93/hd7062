@@ -7,13 +7,12 @@ import TotalCost from "./totalCost";
 
 export default function CounterTopSelectionMenu({ onClick }) {
   const functions = useContext(MyFunctions);
-  const setCost = functions[3];
 
   return (
     <div className="bg-slate-200 p-2 my-2 rounded text-lg md:text-xl">
       <ShapesSelection onClick={onClick} />
       <MeasurementToggle />
-      <CostSelection setCost={setCost} />
+      <CostSelection />
       <TotalCost />
     </div>
   );

@@ -5,6 +5,7 @@ import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
 import { MyFunctions, MyTotalCost } from "./MyContext";
 import Image from "next/image";
+import PageHeader from "./components/page/pageHeader";
 
 const counterTopList = [];
 
@@ -16,6 +17,9 @@ const Home = () => {
   const [measurment, setMeasurment] = useState("Inches");
   const [cost, setCost] = useState(0);
   const [postId, setPostId] = useState(0);
+
+  const disclaimer =
+    "*The estimates provided by this tool are intended for informational purposes only and should not be considered as guarantees. We always recommend reaching out to a professional who can give you a more accurate estimate.";
 
   const addCounterTopToList = (event) => {
     event.preventDefault();
@@ -84,43 +88,35 @@ const Home = () => {
 
   const myFunctionValues = {
     removeCounterTop: removeCounterTop,
+    changeListItemCost: changeListItemCost,
     measurment: [measurment, setMeasurment],
     cost: [cost, setCost],
+    currentTotalCost: [currentTotalCost, setCurrentTotalCost],
   };
 
   return (
     <main>
       <MyFunctions.Provider value={myFunctionValues}>
         <div className="lg:mx-auto mx-2" style={{ maxWidth: 1024 }}>
-          <div className="flex">
-            <h2 className="py-8 md:text-4xl font-bold text-3xl">
-              Counter Top Estimator
-              <span className="text-2xl text-blue-900">*</span>
-            </h2>
-            <div className="pl-2 self-center md:w-14">
-              <Image
-                src={"/icons/measuringTape.png"}
-                alt={"Measuring Tape"}
-                width={50}
-                height={50}
-                className=" p-1 bg-white w-full"
-              />
+          <PageHeader
+            title={"Counter Top Estimator"}
+            imgsrc={"/icons/measuringTape.png"}
+            imgalt={"Measuring Tape"}
+            disclaimer={disclaimer}
+          />
+          <div className=" md:grid-cols-12 md:grid md:gap-4 ">
+            <div className="md:col-span-3 ">
+              <CounterTopSelectionMenu onClick={addCounterTopToList} />
+            </div>
+            <div className="md:col-span-9 container">
+              <div className="p-2 my-2 rounded text-lg md:text-xl">
+                <h3>Current Counter Tops</h3>
+                <span className="w-full bg-black h-px block"></span>
+              </div>
+              <CounterTopList counterTopList={list} />
             </div>
           </div>
-          <MyTotalCost.Provider value={[changeListItemCost, currentTotalCost]}>
-            <div className=" md:grid-cols-12 md:grid md:gap-4 ">
-              <div className="md:col-span-3 ">
-                <CounterTopSelectionMenu onClick={addCounterTopToList} />
-              </div>
-              <div className="md:col-span-9 container">
-                <div className="p-2 my-2 rounded text-lg md:text-xl">
-                  <h3>Current Counter Tops</h3>
-                  <span className="w-full bg-black h-px block"></span>
-                </div>
-                <CounterTopList counterTopList={list} />
-              </div>
-            </div>
-          </MyTotalCost.Provider>
+
           {/* end of grid */}
         </div>
       </MyFunctions.Provider>
