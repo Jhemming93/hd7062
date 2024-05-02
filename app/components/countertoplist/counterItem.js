@@ -9,7 +9,6 @@ export default function CounterItem({ type, letters, postid }) {
   const [currentMearsurment, setCurrentMeasurement] = useState("Inches");
   const functions = useContext(MyFunctions);
   const [measurment, setMeasurment] = functions.measurment;
-
   const handleValueChange = (i, num, myvalue) => {
     const objectIndex = newList.findIndex((obj) => obj.name === i);
 
@@ -26,31 +25,32 @@ export default function CounterItem({ type, letters, postid }) {
     setNewList(updatedList);
   };
 
-  const valueConversion = () => {
-    const convert = newList.map((item) => {
-      let value = item.value;
-      let convertNumber = 0;
-      if (currentMearsurment === "Inches") {
-        convertNumber = value / 12;
-      } else {
-        convertNumber = value * 12;
-      }
-
-      let trimNumber = (Math.round(convertNumber * 100) / 100).toFixed(2);
-
-      return {
-        ...item,
-        value: Number(trimNumber),
-      };
-    });
-    if (currentMearsurment != measurment) {
-      setCurrentMeasurement(measurment);
-      setNewList(convert);
-    } else {
-      return;
-    }
-  };
   useEffect(() => {
+    const valueConversion = () => {
+      const convert = newList.map((item) => {
+        let value = item.value;
+        let convertNumber = 0;
+        if (currentMearsurment === "Inches") {
+          convertNumber = value / 12;
+        } else {
+          convertNumber = value * 12;
+        }
+
+        let trimNumber = (Math.round(convertNumber * 100) / 100).toFixed(2);
+
+        return {
+          ...item,
+          value: Number(trimNumber),
+        };
+      });
+      if (currentMearsurment != measurment) {
+        setCurrentMeasurement(measurment);
+        setNewList(convert);
+      } else {
+        return;
+      }
+    };
+
     valueConversion();
   }, [measurment]);
 

@@ -51,42 +51,6 @@ export default function TotalSqFeet(props) {
   };
   assignLetters();
 
-  const calcShape = () => {
-    const findSum = () => {
-      if (type === "Rectangle") {
-        let sum = B * C;
-        return sum;
-      } else if (type === "L-Shape") {
-        B = B - C;
-        let BD = B * D;
-        let AC = A * C;
-        let sum = AC + BD;
-        return sum;
-      } else if (type === "U-Shape") {
-        let DE = D + E;
-        B = B - DE;
-        let BF = B * F;
-        let AD = A * D;
-        let EC = E * C;
-        let sum = AD + BF + EC;
-        return sum;
-      }
-    };
-
-    const sum = findSum();
-
-    if (measurment === "Inches") {
-      let feet = convertToFeet(sum);
-      return feet;
-    } else {
-      if (Math.ceil(sum) < 0) {
-        return 0;
-      } else {
-        return Math.ceil(sum);
-      }
-    }
-  };
-
   const convertToFeet = (sum) => {
     const decimal = sum / 144;
     const rounded = Math.ceil(decimal);
@@ -97,11 +61,46 @@ export default function TotalSqFeet(props) {
   };
 
   useEffect(() => {
+    const calcShape = () => {
+      const findSum = () => {
+        if (type === "Rectangle") {
+          let sum = B * C;
+          return sum;
+        } else if (type === "L-Shape") {
+          B = B - C;
+          let BD = B * D;
+          let AC = A * C;
+          let sum = AC + BD;
+          return sum;
+        } else if (type === "U-Shape") {
+          let DE = D + E;
+          B = B - DE;
+          let BF = B * F;
+          let AD = A * D;
+          let EC = E * C;
+          let sum = AD + BF + EC;
+          return sum;
+        }
+      };
+
+      const sum = findSum();
+
+      if (measurment === "Inches") {
+        let feet = convertToFeet(sum);
+        return feet;
+      } else {
+        if (Math.ceil(sum) < 0) {
+          return 0;
+        } else {
+          return Math.ceil(sum);
+        }
+      }
+    };
     setFeet(calcShape());
   }, [sideList]);
   useEffect(() => {
     caculateCost(feet, cost);
-  }, [cost, sideList]);
+  }, [cost, feet, sideList]);
 
   useEffect(() => {
     adjustCost(postid, "cost", currentCost);
