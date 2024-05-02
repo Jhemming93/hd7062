@@ -15,7 +15,7 @@ const Home = () => {
   const [list, setList] = useState(counterTopList);
   const [measurment, setMeasurment] = useState("Inches");
   const [cost, setCost] = useState(0);
-  const [id, setId] = useState(0);
+  const [postId, setPostId] = useState(0);
 
   const addCounterTopToList = (event) => {
     event.preventDefault();
@@ -24,14 +24,15 @@ const Home = () => {
   };
 
   const createPostId = () => {
-    if (id === 0) {
-      const postid = id + 1;
-      setId(postid);
+    let newId;
+    if (postId === 0) {
+      newId = postId + 1;
+      setPostId(newId);
       return 0;
-    } else if (id != 0) {
-      const postid = id + 1;
-      setId(postid);
-      return id;
+    } else if (postId != 0) {
+      newId = postId + 1;
+      setPostId(newId);
+      return postId;
     }
   };
 
@@ -71,7 +72,7 @@ const Home = () => {
 
   const totalTotals = () => {
     let setTotal = 0;
-    const getTotals = list.forEach((item) => {
+    list.forEach((item) => {
       setTotal = item.cost + setTotal;
     });
     setCurrentTotalCost(Number(setTotal));
@@ -81,13 +82,11 @@ const Home = () => {
     totalTotals();
   }, [list]);
 
-  const myFunctionValues = [
-    removeCounterTop,
-    setMeasurment,
-    measurment,
-    setCost,
-    cost,
-  ];
+  const myFunctionValues = {
+    removeCounterTop: removeCounterTop,
+    measurment: [measurment, setMeasurment],
+    cost: [cost, setCost],
+  };
 
   return (
     <main>

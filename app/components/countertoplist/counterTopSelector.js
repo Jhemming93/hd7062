@@ -1,6 +1,3 @@
-// import LShapeCounterItem from "./lshape/lShapeCounterItem";
-// import RectangleCounterItem from "./counterItem";
-// import UShapeCounterItem from "./ushape/uShapeCounterItem";
 import CounterItem from "./counterItem";
 
 export default function CounterTopSelector({ type, id }) {

@@ -5,11 +5,12 @@ export default function TotalSqFeet(props) {
   const sideList = props.theInches;
   const [feet, setFeet] = useState("0");
   const [cost, setCost] = useState("0.00");
-  const measurment = props.measurment;
+
   const functions = useContext(MyFunctions);
   const myTotalCost = useContext(MyTotalCost);
   const adjustCost = myTotalCost[0];
   const postid = props.postid;
+  const [measurment, setMeasurment] = functions.measurment;
 
   const costSet = functions[4];
 
