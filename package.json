@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.1.1",
+    "axios": "^1.6.8",
     "netlify-cli": "^17.22.1",
     "next": "14.2.1",
     "react": "^18",

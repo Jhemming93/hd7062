@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
 import { MyFunctions, MyTotalCost } from "./MyContext";
-import Image from "next/image";
+import getData from "./api/data";
 import PageHeader from "./components/page/pageHeader";
 
 const counterTopList = [];
@@ -17,7 +17,7 @@ const Home = () => {
   const [measurment, setMeasurment] = useState("Inches");
   const [cost, setCost] = useState(0);
   const [postId, setPostId] = useState(0);
-
+  getData();
   const disclaimer =
     "*The estimates provided by this tool are intended for informational purposes only and should not be considered as guarantees. We always recommend reaching out to a professional who can give you a more accurate estimate.";
 
