@@ -21,8 +21,8 @@ export default function ToggleBtn(props) {
       <button
         className={
           active === left
-            ? "bg-blue-500 text-white rounded-l-lg p-2 border-black border-2"
-            : "rounded-l-lg p-2 border-black border-2"
+            ? "bg-blue-500 text-white rounded-l-full p-2 border-black border-2"
+            : "rounded-l-full p-2 border-black border-2"
         }
         onClick={() => changeActive(left)}
       >
@@ -31,8 +31,8 @@ export default function ToggleBtn(props) {
       <button
         className={
           active === right
-            ? "bg-blue-500 text-white rounded-r-lg p-2 border-black border-2"
-            : "rounded-r-lg p-2 border-black border-2"
+            ? "bg-blue-500 text-white rounded-r-full p-2 border-black border-2"
+            : "rounded-r-full p-2 border-black border-2"
         }
         onClick={() => changeActive(right)}
       >

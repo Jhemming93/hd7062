@@ -1,4 +1,4 @@
-import DeleteBtn from "../../buttons/delete";
+import DeleteBtn from "../../../buttons/delete";
 import { MyFunctions } from "@/app/MyContext";
 import { useContext } from "react";
 

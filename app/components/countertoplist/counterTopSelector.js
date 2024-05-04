@@ -1,4 +1,4 @@
-import CounterItem from "./counterItem";
+import CounterItem from "./counteritem/counterItem";
 
 export default function CounterTopSelector({ type, id }) {
   const rectangleL = [
