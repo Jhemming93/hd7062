@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import CounterTopList from "./components/countertoplist/counterTopList";
 import CounterTopSelectionMenu from "./components/sidemenu/counterTopSelectionMenu";
-import { MyFunctions, MyTotalCost } from "./MyContext";
+import { MyFunctions } from "./MyContext";
 import getData from "./api/data";
 import PageHeader from "./components/page/pageHeader";
 
