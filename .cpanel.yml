@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/app
-    - / layout.js $DEPLOYPATH
-    - / global.css $DEPLOYPATH
+    - export DEPLOYPATH= /home/dcwok715/justtools.ca
+    - /app layout.js $DEPLOYPATH
+    - /app global.css $DEPLOYPATH
