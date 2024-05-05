@@ -43,6 +43,8 @@ const Home = () => {
   const changeListItemCost = (id, myvalue, num) => {
     const objectIndex = list.findIndex((item) => item.id === id);
 
+    console.log(id + " " + myvalue + " " + num);
+
     const updatedList = list.map((item, index) => {
       if (index === objectIndex) {
         return {
@@ -50,7 +52,7 @@ const Home = () => {
           [myvalue]: Number(num),
         };
       } else {
-        return item;
+        return { ...item };
       }
     });
 
@@ -74,15 +76,15 @@ const Home = () => {
     setList([...list]);
   };
 
-  const totalTotals = () => {
-    let setTotal = 0;
-    list.forEach((item) => {
-      setTotal = item.cost + setTotal;
-    });
-    setCurrentTotalCost(Number(setTotal));
-  };
-
   useEffect(() => {
+    const totalTotals = () => {
+      let setTotal = 0;
+      list.forEach((item) => {
+        setTotal = item.cost + setTotal;
+      });
+      setCurrentTotalCost(Number(setTotal));
+    };
+
     totalTotals();
   }, [list]);
 
@@ -93,6 +95,7 @@ const Home = () => {
     cost: [cost, setCost],
     currentTotalCost: [currentTotalCost, setCurrentTotalCost],
   };
+
   console.log(list);
   return (
     <main>

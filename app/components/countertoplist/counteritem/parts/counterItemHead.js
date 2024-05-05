@@ -11,7 +11,9 @@ export default function CounterItemHead(props) {
   return (
     <div className="flex justify-between sm:justify-normal">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:w-full">
-        <h3 className="text-lrg md:text-2xl font-bold">{type} Countertop</h3>
+        <h3 className="text-lrg md:text-2xl font-bold">
+          {type} Countertop {postid}
+        </h3>
         <p className="pr-4 self-center capitalize">
           <span className="font-bold">Measurment in</span> {measurment}
         </p>

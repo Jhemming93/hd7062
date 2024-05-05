@@ -8,7 +8,7 @@ export default function TotalSqFeet(props) {
 
   const functions = useContext(MyFunctions);
 
-  const adjustCost = functions.changeListItemCost;
+  const changeListItemCost = functions.changeListItemCost;
   const postid = props.postid;
   const [measurment, setMeasurment] = functions.measurment;
 
@@ -23,34 +23,6 @@ export default function TotalSqFeet(props) {
     }
   };
 
-  let A = "";
-  let B = "";
-  let C = "";
-  let D = "";
-  let E = "";
-  let F = "";
-
-  const type = props.type;
-  const assignLetters = () => {
-    sideList.forEach((item) => {
-      const name = item.name;
-      if (name === "A") {
-        return (A = item.value);
-      } else if (name === "B") {
-        return (B = item.value);
-      } else if (name === "C") {
-        return (C = item.value);
-      } else if (name === "D") {
-        return (D = item.value);
-      } else if (name === "E") {
-        return (E = item.value);
-      } else if (name === "F") {
-        return (F = item.value);
-      }
-    });
-  };
-  assignLetters();
-
   const convertToFeet = (sum) => {
     const decimal = sum / 144;
     const rounded = Math.ceil(decimal);
@@ -61,6 +33,35 @@ export default function TotalSqFeet(props) {
   };
 
   useEffect(() => {
+    let A = "";
+    let B = "";
+    let C = "";
+    let D = "";
+    let E = "";
+    let F = "";
+
+    const type = props.type;
+    const assignLetters = () => {
+      sideList.forEach((item) => {
+        const name = item.name;
+        if (name === "A") {
+          return (A = item.value);
+        } else if (name === "B") {
+          return (B = item.value);
+        } else if (name === "C") {
+          return (C = item.value);
+        } else if (name === "D") {
+          return (D = item.value);
+        } else if (name === "E") {
+          return (E = item.value);
+        } else if (name === "F") {
+          return (F = item.value);
+        }
+      });
+    };
+
+    assignLetters();
+
     const calcShape = () => {
       const findSum = () => {
         if (type === "Rectangle") {
@@ -68,6 +69,7 @@ export default function TotalSqFeet(props) {
           return sum;
         } else if (type === "L-Shape") {
           B = B - C;
+          console.log(B);
           let BD = B * D;
           let AC = A * C;
           let sum = AC + BD;
@@ -98,13 +100,15 @@ export default function TotalSqFeet(props) {
     };
     setFeet(calcShape());
   }, [sideList]);
+
   useEffect(() => {
     caculateCost(feet, cost);
   }, [cost, feet, sideList]);
 
   useEffect(() => {
-    adjustCost(postid, "cost", currentCost);
-  }, [currentCost]);
+    const value = "cost";
+    changeListItemCost(postid, value, currentCost);
+  }, [currentCost, postid]);
 
   return (
     <div className="flex flex-col sm:flex-row">
