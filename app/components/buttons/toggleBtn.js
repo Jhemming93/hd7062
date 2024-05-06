@@ -22,7 +22,7 @@ export default function ToggleBtn(props) {
         className={
           active === left
             ? "bg-sky-200 text-blue-700 rounded-l-full p-2 border-black border-2"
-            : "rounded-l-full p-2 border-black border-2"
+            : "rounded-l-full text-sky-200 p-2 border-black border-2"
         }
         onClick={() => changeActive(left)}
       >
@@ -32,7 +32,7 @@ export default function ToggleBtn(props) {
         className={
           active === right
             ? "bg-sky-200 text-blue-700 rounded-r-full p-2 border-black border-2"
-            : "rounded-r-full p-2 border-black border-2"
+            : "rounded-r-full p-2 text-sky-200 border-black border-2"
         }
         onClick={() => changeActive(right)}
       >
