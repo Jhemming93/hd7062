@@ -9,7 +9,7 @@ export default function TotalCost() {
   return (
     <div className="pt-2">
       <Title title="Total Estimate Cost" />
-      <p>${currentTotalCost}</p>
+      <p className="p-2 text-sky-200">${currentTotalCost}</p>
     </div>
   );
 }

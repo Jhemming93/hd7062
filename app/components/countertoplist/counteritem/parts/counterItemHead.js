@@ -9,11 +9,9 @@ export default function CounterItemHead(props) {
   const [measurment, setMeasurment] = functions.measurment;
 
   return (
-    <div className="flex justify-between sm:justify-normal">
+    <div className="flex justify-between sm:justify-normal bg-sky-200 p-2 rounded-t-sm">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:w-full">
-        <h3 className="text-lrg md:text-2xl font-bold">
-          {type} Countertop {postid}
-        </h3>
+        <h3 className="text-lrg md:text-2xl font-bold">{type} Countertop</h3>
         <p className="pr-4 self-center capitalize">
           <span className="font-bold">Measurment in</span> {measurment}
         </p>

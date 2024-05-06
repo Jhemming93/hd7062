@@ -2,8 +2,8 @@ import CounterItem from "./counteritem/counterItem";
 
 export default function CounterTopSelector({ type, id }) {
   const rectangleL = [
-    { name: "B", value: 0, stand: false },
-    { name: "C", value: 25.5, stand: true },
+    { name: "A", value: 0, stand: false },
+    { name: "B", value: 25.5, stand: true },
   ];
   const uShapeL = [
     { name: "A", value: 0, stand: false },

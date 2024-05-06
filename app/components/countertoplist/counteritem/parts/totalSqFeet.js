@@ -65,11 +65,11 @@ export default function TotalSqFeet(props) {
     const calcShape = () => {
       const findSum = () => {
         if (type === "Rectangle") {
-          let sum = B * C;
+          let sum = A * B;
           return sum;
         } else if (type === "L-Shape") {
           B = B - C;
-          console.log(B);
+
           let BD = B * D;
           let AC = A * C;
           let sum = AC + BD;
@@ -111,14 +111,14 @@ export default function TotalSqFeet(props) {
   }, [currentCost, postid]);
 
   return (
-    <div className="flex flex-col sm:flex-row">
+    <div className="flex flex-col  bg-white rounded p-1 px-2 w-3/4">
       <p>
-        <span className="border-1 bg-white p-1">{feet}</span>{" "}
-        <span className="font-bold">Sq. Feet Total</span>
+        <span className="pr-1">{feet}&sup2;</span>
+        <span className="font-bold"> Ft Total</span>
       </p>
-      <p className="sm:pl-2 py-3 sm:py-0">
-        <span className="border-1 bg-white p-1">${currentCost}</span>{" "}
-        <span className="font-bold">Estimate Cost for Counter Top</span>
+      <p className="">
+        <span className="border-1 pr-1">${currentCost}</span>{" "}
+        <span className="font-bold">Est. Cost for Counter Top</span>
       </p>
     </div>
   );

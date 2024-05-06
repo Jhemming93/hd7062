@@ -20,7 +20,7 @@ export default function CounterTopShapeBtn({ title, onClick }) {
             </div>
           </div>
         </button>
-        <p className="text-center pt-1">{title}</p>
+        <p className="text-center pt-1 text-sky-200 font-bold">{title}</p>
       </div>
     </>
   );

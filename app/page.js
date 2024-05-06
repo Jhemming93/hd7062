@@ -43,8 +43,6 @@ const Home = () => {
   const changeListItemCost = (id, myvalue, num) => {
     const objectIndex = list.findIndex((item) => item.id === id);
 
-    console.log(id + " " + myvalue + " " + num);
-
     const updatedList = list.map((item, index) => {
       if (index === objectIndex) {
         return {
@@ -96,7 +94,6 @@ const Home = () => {
     currentTotalCost: [currentTotalCost, setCurrentTotalCost],
   };
 
-  console.log(list);
   return (
     <main>
       <MyFunctions.Provider value={myFunctionValues}>
@@ -112,8 +109,10 @@ const Home = () => {
               <CounterTopSelectionMenu onClick={addCounterTopToList} />
             </div>
             <div className="md:col-span-9 container">
-              <div className="p-2 my-2 rounded text-lg md:text-xl">
-                <h3>Current Counter Tops</h3>
+              <div className="pb-2 px-2 mb-2 rounded text-lg md:text-xl">
+                <h3 className="font-bold text-lrg md:text-2xl">
+                  Current Counter Tops
+                </h3>
                 <span className="w-full bg-black h-px block"></span>
               </div>
               <CounterTopList counterTopList={list} />

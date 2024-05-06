@@ -1,17 +1,16 @@
 import Image from "next/image";
-import uLettered from "./icons/u-lettered.png";
-import lLettered from "./icons/l-lettered.png";
-import rLettered from "./icons/r-lettered.png";
 
 export default function LetteredImage({ type }) {
   const item = (image) => {
+    let src = "/icons/" + image + "-Lettered.png";
     return (
       <div>
         <Image
-          src={image}
+          src={src}
           alt={{ type } + " Lettered"}
-          width={250}
-          height={250}
+          width={350}
+          height={350}
+          className="mx-auto"
         />
       </div>
     );
@@ -19,10 +18,10 @@ export default function LetteredImage({ type }) {
 
   switch (type) {
     case "Rectangle":
-      return item(rLettered);
+      return item("Rectangle");
     case "U-Shape":
-      return item(uLettered);
+      return item("U-Shape");
     case "L-Shape":
-      return item(lLettered);
+      return item("L-Shape");
   }
 }

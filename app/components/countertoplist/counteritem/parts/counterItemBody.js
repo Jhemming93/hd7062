@@ -9,9 +9,8 @@ export default function CounterItemBody(props) {
   const postid = props.postid;
 
   return (
-    <div className="md:flex">
-      <LetteredImage type={type} />
-      <div className="self-center">
+    <div className="md:flex p-2">
+      <div className="self-center mb-2 mx-auto w-full">
         <form className="">
           <div className="grid grid-cols-1 sm:grid-cols-2">
             {newList.map((item, index) => (
@@ -27,6 +26,7 @@ export default function CounterItemBody(props) {
 
         <TotalSqFeet theInches={newList} type={type} postid={postid} />
       </div>
+      <LetteredImage type={type} />
     </div>
   );
 }

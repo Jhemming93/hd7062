@@ -17,11 +17,11 @@ export default function ToggleBtn(props) {
   };
 
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid grid-cols-2 p-2">
       <button
         className={
           active === left
-            ? "bg-blue-500 text-white rounded-l-full p-2 border-black border-2"
+            ? "bg-sky-200 text-blue-700 rounded-l-full p-2 border-black border-2"
             : "rounded-l-full p-2 border-black border-2"
         }
         onClick={() => changeActive(left)}
@@ -31,7 +31,7 @@ export default function ToggleBtn(props) {
       <button
         className={
           active === right
-            ? "bg-blue-500 text-white rounded-r-full p-2 border-black border-2"
+            ? "bg-sky-200 text-blue-700 rounded-r-full p-2 border-black border-2"
             : "rounded-r-full p-2 border-black border-2"
         }
         onClick={() => changeActive(right)}

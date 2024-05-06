@@ -56,7 +56,7 @@ export default function CounterItem({ type, letters, postid }) {
 
   return (
     <>
-      <div className="bg-slate-200 p-3 my-2 rounded" id={postid}>
+      <div className="my-2 rounded bg-sky-600" id={postid}>
         <CounterItemHead type={type} postid={postid} />
         <CounterItemBody
           type={type}
