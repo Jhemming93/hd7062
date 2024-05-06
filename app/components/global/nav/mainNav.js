@@ -2,13 +2,10 @@ import MenuLink from "./menuLink";
 
 export default function MainNav() {
   const navLinks = [
+    { name: "Home", link: "/" },
     {
-      name: "Counter Top Estimator",
-      link: "/",
-    },
-    {
-      name: "Flooring Estimate",
-      link: "/flooringest",
+      name: "Estimators",
+      link: "/estimators",
     },
   ];
 

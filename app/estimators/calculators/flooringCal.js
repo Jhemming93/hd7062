@@ -1,6 +1,6 @@
-import PageHeader from "../components/page/pageHeader";
+import PageHeader from "../../components/page/pageHeader";
 
-const Flooring = () => {
+const FlooringCal = () => {
   const disclaimer = "";
   return (
     <>
@@ -14,4 +14,4 @@ const Flooring = () => {
   );
 };
 
-export default Flooring;
+export default FlooringCal;

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const PageHeader = (props) => {
   const title = props.title;
-  const disclaimer = props.disclaimer;
+
   const src = props.imgsrc;
   const alt = props.imgalt;
   return (
@@ -22,7 +22,6 @@ const PageHeader = (props) => {
           />
         </div>
       </div>
-      <p>{disclaimer}</p>
     </div>
   );
 };
