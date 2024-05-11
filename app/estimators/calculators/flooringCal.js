@@ -1,7 +1,7 @@
+import FloorItem from "@/app/components/sidemenu/floorIngSideMenu/floorItem/floorItem";
 import PageHeader from "../../components/page/pageHeader";
 
 const FlooringCal = () => {
-  const disclaimer = "";
   return (
     <>
       <PageHeader
@@ -10,6 +10,9 @@ const FlooringCal = () => {
         imgalt={"Measuring Tape"}
         disclaimer={disclaimer}
       />
+      <div>
+        <FloorItem />
+      </div>
     </>
   );
 };

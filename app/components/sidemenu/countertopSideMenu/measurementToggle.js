@@ -1,5 +1,5 @@
 import { MyFunctions } from "@/app/MyContext";
-import ToggleBtn from "../buttons/toggleBtn";
+import ToggleBtn from "../../buttons/toggleBtn";
 import { useContext } from "react";
 import Title from "./parts/title";
 

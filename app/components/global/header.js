@@ -4,7 +4,7 @@ import MainNav from "./nav/mainNav";
 export default function Header() {
   return (
     <>
-      <header className="bg-gray-100 py-2 sticky top-0 sm:static">
+      <header className="bg-everGreen py-2 sticky top-0 sm:static">
         <div
           className="mx-auto justify-between md:flex sm:container"
           style={{ maxWidth: 1024 }}
