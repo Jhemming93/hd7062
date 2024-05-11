@@ -13,7 +13,7 @@ export default function CounterTopSelectionMenu({ onClick }) {
       <ShapesSelection onClick={onClick} />
       <MeasurementToggle />
       <CostSelection />
-      <TotalCost />
+      {/* <TotalCost /> */}
     </div>
   );
 }

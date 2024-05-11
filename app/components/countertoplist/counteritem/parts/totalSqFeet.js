@@ -106,8 +106,10 @@ export default function TotalSqFeet(props) {
   }, [cost, feet, sideList]);
 
   useEffect(() => {
+    // console.log("before =" + postid + " = " + currentCost);
     const value = "cost";
     changeListItemCost(postid, value, currentCost);
+    // console.log("after =" + postid + " = " + currentCost);
   }, [currentCost, postid]);
 
   return (

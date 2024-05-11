@@ -41,6 +41,8 @@ const Home = () => {
   };
 
   const changeListItemCost = (id, myvalue, num) => {
+    // console.log("changed " + id);
+    // console.log("value=" + num);
     const objectIndex = list.findIndex((item) => item.id === id);
 
     const updatedList = list.map((item, index) => {
@@ -73,18 +75,20 @@ const Home = () => {
     list.splice(findIndex, 1);
     setList([...list]);
   };
-
+  // console.log(list);
   useEffect(() => {
-    const totalTotals = () => {
-      let setTotal = 0;
-      list.forEach((item) => {
-        setTotal = item.cost + setTotal;
-      });
-      setCurrentTotalCost(Number(setTotal));
-    };
-
-    totalTotals();
-  }, [list]);
+    // const prices = list.map((counter) => counter.cost);
+    // const totalEst = prices.reduce((acc, curr) => acc + curr);
+    // console.log(totalEst);
+    // const totalTotals = () => {
+    //   let setTotal = 0;
+    //   list.forEach((item) => {
+    //     setTotal = item.cost + setTotal;
+    //   });
+    //   return setTotal;
+    // };
+    // setCurrentTotalCost(Number(totalTotals()));
+  }, [list, currentTotalCost]);
 
   const myFunctionValues = {
     removeCounterTop: removeCounterTop,
