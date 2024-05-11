@@ -13,13 +13,13 @@ const PageHeader = (props) => {
           <span className="text-2xl text-blue-900">*</span>
         </h2>
         <div className="pl-2 self-center md:w-14">
-          <Image
+          {/* <Image
             src={src}
             alt={alt}
             width={50}
             height={50}
             className=" p-1 bg-white w-full"
-          />
+          /> */}
         </div>
       </div>
       <p>{disclaimer}</p>
