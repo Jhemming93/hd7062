@@ -8,11 +8,11 @@ export default function Footer() {
           <p className="pl-1 self-center text-lrg " id="disclaimer">
             <span className="font-bold">*Created by </span>
             <Link
-              href={"https://www.justcreativedesign.ca/"}
+              href={"https://www.justicehemming.ca/"}
               className="text-yellow-50 hover:text-yellow-200"
               target="_blank"
             >
-              JustCreativeDesigns
+              JusticeHemming
             </Link>
           </p>
         </div>
